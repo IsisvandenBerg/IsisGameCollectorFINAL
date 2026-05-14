@@ -5,9 +5,9 @@ import org.junit.Test;
 import com.example.isisgamecollector.UI.UI.entities.Game;
 
 /**
- * Unit test to ensure games are correctly assigned to consoles
+ * Unit tests for the Game entity to ensure data integrity.
  */
-public class SimpleHierarchyTest {
+public class UnitTest {
 
     @Test
     public void testGameToConsoleAssignment() {
