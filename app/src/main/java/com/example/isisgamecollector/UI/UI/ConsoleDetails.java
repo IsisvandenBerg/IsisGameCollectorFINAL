@@ -60,7 +60,7 @@ public class ConsoleDetails extends AppCompatActivity {
         saveButton.setOnClickListener(v -> saveConsole());
 
         consoleID = getIntent().getIntExtra("id",-1);
-        userID = getIntent().getIntExtra("userID", -1);
+        userID = getIntent().getIntExtra("userID", -1);//ensures entries are unique to account
         repository = new Repository(getApplication());
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

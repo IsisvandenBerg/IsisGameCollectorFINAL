@@ -36,7 +36,7 @@ public class GameDetails extends AppCompatActivity {
     String date;
     String acquisitionDate;
     int consoleID;
-    int userID;
+    int userID;//ensures entries are unique to account
     String consoleRelease;
     Repository repository;
     DatePickerDialog.OnDateSetListener dateListener;

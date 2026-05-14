@@ -34,7 +34,7 @@ public class ConsoleList extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView emptyStateText;
     private TextView statsContent;
-    private int userID;
+    private int userID;//ensures entries are unique to account
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,8 +163,8 @@ public class ConsoleList extends AppCompatActivity {
         }
 
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss", Locale.getDefault()).format(new Date());
-        
-        StringBuilder report = new StringBuilder();
+
+        StringBuilder report = new StringBuilder();//report generator
         report.append("ISIS GAME COLLECTOR - FULL COLLECTION REPORT\n");
         report.append("Generated on: ").append(timeStamp).append("\n");
         report.append("==========================================\n\n");

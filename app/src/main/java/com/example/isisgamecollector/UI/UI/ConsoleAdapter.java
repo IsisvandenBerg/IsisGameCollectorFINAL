@@ -81,7 +81,7 @@ public class ConsoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     intent.putExtra("consoleBrand", current.getConsoleBrand());
                     intent.putExtra("consoleReleaseDate", current.getConsoleReleaseDate());
                     intent.putExtra("acquisitionDate", current.getAcquisitionDate());
-                    intent.putExtra("userID", userID);
+                    intent.putExtra("userID", userID);//ensures entries are unique to account
                     context.startActivity(intent);
                 }
             });
@@ -93,7 +93,7 @@ public class ConsoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     Intent intent = new Intent(context, GameDetails.class);
                     intent.putExtra("consoleID", current.getConsoleID());
                     intent.putExtra("consoleRelease", current.getConsoleReleaseDate());
-                    intent.putExtra("userID", userID);
+                    intent.putExtra("userID", userID);//ensures entries are unique to account
                     context.startActivity(intent);
                 }
             });
@@ -130,7 +130,7 @@ public class ConsoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     intent.putExtra("date", game.getGameReleaseDate());
                     intent.putExtra("acquisitionDate", game.getAcquisitionDate());
                     intent.putExtra("consoleID", game.getConsoleID());
-                    intent.putExtra("userID", userID);
+                    intent.putExtra("userID", userID);//ensures entries are unique to account
                     
                     // Find associated console release date
                     for (Console console : mConsolesFull) {
@@ -199,7 +199,7 @@ public class ConsoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                                 intent.putExtra("acquisitionDate", game.getAcquisitionDate());
                                 intent.putExtra("consoleID", game.getConsoleID());
                                 intent.putExtra("consoleRelease", current.getConsoleReleaseDate());
-                                intent.putExtra("userID", userID);
+                                intent.putExtra("userID", userID);//ensures entries are unique to account
                                 context.startActivity(intent);
                             });
                             consoleHolder.gameListContainer.addView(gameView);

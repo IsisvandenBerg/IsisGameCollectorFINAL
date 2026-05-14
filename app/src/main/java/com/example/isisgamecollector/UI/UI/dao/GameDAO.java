@@ -23,7 +23,7 @@ public interface GameDAO {
     void delete(Game game);
 
     @Query("SELECT * FROM GAMES WHERE userID = :userID ORDER BY gameID ASC")
-    List<Game> getGamesByUserID(int userID);
+    List<Game> getGamesByUserID(int userID);//ensures entries are unique to account
 
     @Query("SELECT * FROM GAMES ORDER BY gameID ASC")
     List<Game> getAllGames();
