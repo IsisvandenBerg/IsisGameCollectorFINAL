@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
                     android:inputType="date"
-                    android:hint="MM/DD/YY"
+                    android:hint="MM/dd/yy"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
                     android:inputType="date"
-                    android:hint="MM/DD/YY"
+                    android:hint="MM/dd/yy"
                     android:textSize="20sp" />
             </LinearLayout>
 
