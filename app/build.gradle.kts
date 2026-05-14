@@ -2,6 +2,16 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+// Fix for "Could not find or load main class" due to spaces in java.library.path on Windows
+// Replace spaces with 8.3 short paths for common Program Files locations
+val currentLibPath = System.getProperty("java.library.path") ?: ""
+if (currentLibPath.contains(" ")) {
+    val fixedPath = currentLibPath
+        .replace("C:\\Program Files (x86)", "C:\\PROGRA~2")
+        .replace("C:\\Program Files", "C:\\PROGRA~1")
+    System.setProperty("java.library.path", fixedPath)
+}
+
 android {
     namespace = "com.example.isisgamecollector"
     compileSdk {
