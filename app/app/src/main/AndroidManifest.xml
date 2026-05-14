@@ -12,31 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IsisGameCollector">
         <activity
-            android:name=".UI.UI.AccountCreationActivity"
+            android:name=".UI.AccountCreationActivity"
             android:exported="false"
             android:label="Create Account"
-            android:parentActivityName=".UI.UI.MainActivity" />
+            android:parentActivityName=".UI.MainActivity" />
         <activity
-            android:name=".UI.UI.PasswordResetActivity"
+            android:name=".UI.PasswordResetActivity"
             android:exported="false"
             android:label="Reset Password"
-            android:parentActivityName=".UI.UI.MainActivity" />
+            android:parentActivityName=".UI.MainActivity" />
         <activity
-            android:name=".UI.UI.GameDetails"
+            android:name=".UI.GameDetails"
             android:label="Game Details"
-            android:parentActivityName=".UI.UI.ConsoleDetails"
+            android:parentActivityName=".UI.ConsoleDetails"
             android:exported="false" />
         <activity
-            android:name=".UI.UI.ConsoleDetails"
+            android:name=".UI.ConsoleDetails"
             android:exported="false"
             android:label="Console Details"
-            android:parentActivityName=".UI.UI.ConsoleList" />
+            android:parentActivityName=".UI.ConsoleList" />
         <activity
-            android:name=".UI.UI.ConsoleList"
+            android:name=".UI.ConsoleList"
             android:exported="false"
             android:label="Collection List" />
         <activity
-            android:name=".UI.UI.MainActivity"
+            android:name=".UI.MainActivity"
             android:exported="true"
             android:label="Home">
             <intent-filter>
