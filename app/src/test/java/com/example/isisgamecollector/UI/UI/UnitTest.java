@@ -5,7 +5,7 @@ import org.junit.Test;
 import com.example.isisgamecollector.UI.UI.entities.Game;
 
 /**
- * Unit tests for the Game entity to ensure data integrity.
+ * Unit test to ensure games are correctly assigned to consoles
  */
 public class UnitTest {
 
