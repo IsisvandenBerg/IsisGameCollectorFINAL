@@ -22,6 +22,9 @@ public interface ConsoleDAO {
     @Delete
     void delete(Console console);
 
+    @Query("SELECT * FROM CONSOLES WHERE userID = :userID ORDER BY consoleID ASC")
+    List<Console> getConsolesByUserID(int userID);
+
     @Query("SELECT * FROM CONSOLES ORDER BY consoleID ASC")
     List<Console> getAllConsoles();
 

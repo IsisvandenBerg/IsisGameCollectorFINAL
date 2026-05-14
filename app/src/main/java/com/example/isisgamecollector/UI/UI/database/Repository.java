@@ -27,6 +27,10 @@ public class Repository {
         return mConsoleDAO.getAllConsoles();
     }
 
+    public List<Console> getConsolesByUserID(int userID){
+        return mConsoleDAO.getConsolesByUserID(userID);
+    }
+
     public Console getConsoleByID(int id) {
         return mConsoleDAO.getConsoleByID(id);
     }
@@ -45,6 +49,10 @@ public class Repository {
 
     public List<Game> getAllGames(){
         return mGameDAO.getAllGames();
+    }
+
+    public List<Game> getGamesByUserID(int userID){
+        return mGameDAO.getGamesByUserID(userID);
     }
 
     public void insert(Game game){

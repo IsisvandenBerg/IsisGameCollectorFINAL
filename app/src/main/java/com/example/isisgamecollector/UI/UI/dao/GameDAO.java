@@ -22,6 +22,9 @@ public interface GameDAO {
     @Delete
     void delete(Game game);
 
+    @Query("SELECT * FROM GAMES WHERE userID = :userID ORDER BY gameID ASC")
+    List<Game> getGamesByUserID(int userID);
+
     @Query("SELECT * FROM GAMES ORDER BY gameID ASC")
     List<Game> getAllGames();
     @Query("SELECT * FROM GAMES WHERE consoleID=:prod ORDER BY gameID ASC ")

@@ -36,6 +36,7 @@ public class GameDetails extends AppCompatActivity {
     String date;
     String acquisitionDate;
     int consoleID;
+    int userID;
     String consoleRelease;
     Repository repository;
     DatePickerDialog.OnDateSetListener dateListener;
@@ -58,6 +59,7 @@ public class GameDetails extends AppCompatActivity {
         Button btnSave = findViewById(R.id.btnSaveGame);
 
         gameID = getIntent().getIntExtra("id", -1);
+        userID = getIntent().getIntExtra("userID", -1);
 
         name = getIntent().getStringExtra("name");
         date = getIntent().getStringExtra("date");
@@ -189,10 +191,10 @@ public class GameDetails extends AppCompatActivity {
             if (repository.getAllGames().size() == 0) gameID = 1;
             else
                 gameID = repository.getAllGames().get(repository.getAllGames().size() - 1).getGameID() + 1;
-            game = new Game(gameID, editName.getText().toString(), editDate.getText().toString(), editAcquisitionDate.getText().toString(), consoleID);
+            game = new Game(gameID, editName.getText().toString(), editDate.getText().toString(), editAcquisitionDate.getText().toString(), consoleID, userID);
             repository.insert(game);
         } else {
-            game = new Game(gameID, editName.getText().toString(), editDate.getText().toString(), editAcquisitionDate.getText().toString(), consoleID);
+            game = new Game(gameID, editName.getText().toString(), editDate.getText().toString(), editAcquisitionDate.getText().toString(), consoleID, userID);
             repository.update(game);
         }
         this.finish();

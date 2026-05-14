@@ -11,13 +11,15 @@ public class Game {
     private String gameReleaseDate;
     private String acquisitionDate;
     private int consoleID;
+    private int userID;
 
-    public Game(int gameID, String gameName, String gameReleaseDate, String acquisitionDate, int consoleID) {
+    public Game(int gameID, String gameName, String gameReleaseDate, String acquisitionDate, int consoleID, int userID) {
         this.gameID = gameID;
         this.gameName = gameName;
         this.gameReleaseDate = gameReleaseDate;
         this.acquisitionDate = acquisitionDate;
         this.consoleID = consoleID;
+        this.userID = userID;
     }
 
     public int getGameID() {
@@ -58,6 +60,14 @@ public class Game {
 
     public void setConsoleID(int consoleID) {
         this.consoleID = consoleID;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     @Override

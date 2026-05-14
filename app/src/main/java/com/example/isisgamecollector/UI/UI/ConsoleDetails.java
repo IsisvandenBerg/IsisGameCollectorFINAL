@@ -32,6 +32,7 @@ public class ConsoleDetails extends AppCompatActivity {
     String releaseDate;
     String acquisitionDate;
     int consoleID;
+    int userID;
     EditText editName;
     EditText editAcquisitionDate;
     EditText editBrand;
@@ -59,6 +60,7 @@ public class ConsoleDetails extends AppCompatActivity {
         saveButton.setOnClickListener(v -> saveConsole());
 
         consoleID = getIntent().getIntExtra("id",-1);
+        userID = getIntent().getIntExtra("userID", -1);
         repository = new Repository(getApplication());
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -154,10 +156,10 @@ public class ConsoleDetails extends AppCompatActivity {
             if (repository.getmAllConsoles().isEmpty()) consoleID = 1;
             else
                 consoleID = repository.getmAllConsoles().get(repository.getmAllConsoles().size() - 1).getConsoleID() + 1;
-            console = new Console(consoleID, editName.getText().toString(), editBrand.getText().toString(), editReleaseDate.getText().toString(), editAcquisitionDate.getText().toString());
+            console = new Console(consoleID, editName.getText().toString(), editBrand.getText().toString(), editReleaseDate.getText().toString(), editAcquisitionDate.getText().toString(), userID);
             repository.insert(console);
         } else {
-            console = new Console(consoleID, editName.getText().toString(), editBrand.getText().toString(), editReleaseDate.getText().toString(), editAcquisitionDate.getText().toString());
+            console = new Console(consoleID, editName.getText().toString(), editBrand.getText().toString(), editReleaseDate.getText().toString(), editAcquisitionDate.getText().toString(), userID);
             repository.update(console);
         }
         this.finish();

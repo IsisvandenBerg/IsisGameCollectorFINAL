@@ -38,10 +38,15 @@ public class ConsoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private final LayoutInflater mInflater;
     private final Set<Integer> expandedConsoleIds = new HashSet<>();
     private boolean isSearching = false;
+    private int userID;
 
     public ConsoleAdapter(Context context) {
         this.mInflater = LayoutInflater.from(context);
         this.context = context;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     @Override
@@ -76,6 +81,7 @@ public class ConsoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     intent.putExtra("consoleBrand", current.getConsoleBrand());
                     intent.putExtra("consoleReleaseDate", current.getConsoleReleaseDate());
                     intent.putExtra("acquisitionDate", current.getAcquisitionDate());
+                    intent.putExtra("userID", userID);
                     context.startActivity(intent);
                 }
             });
@@ -87,6 +93,7 @@ public class ConsoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     Intent intent = new Intent(context, GameDetails.class);
                     intent.putExtra("consoleID", current.getConsoleID());
                     intent.putExtra("consoleRelease", current.getConsoleReleaseDate());
+                    intent.putExtra("userID", userID);
                     context.startActivity(intent);
                 }
             });
@@ -123,6 +130,7 @@ public class ConsoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     intent.putExtra("date", game.getGameReleaseDate());
                     intent.putExtra("acquisitionDate", game.getAcquisitionDate());
                     intent.putExtra("consoleID", game.getConsoleID());
+                    intent.putExtra("userID", userID);
                     
                     // Find associated console release date
                     for (Console console : mConsolesFull) {
@@ -191,6 +199,7 @@ public class ConsoleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                                 intent.putExtra("acquisitionDate", game.getAcquisitionDate());
                                 intent.putExtra("consoleID", game.getConsoleID());
                                 intent.putExtra("consoleRelease", current.getConsoleReleaseDate());
+                                intent.putExtra("userID", userID);
                                 context.startActivity(intent);
                             });
                             consoleHolder.gameListContainer.addView(gameView);

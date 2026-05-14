@@ -13,7 +13,7 @@ import com.example.isisgamecollector.UI.UI.entities.Console;
 import com.example.isisgamecollector.UI.UI.entities.Game;
 import com.example.isisgamecollector.UI.UI.entities.User;
 
-@Database(entities = {Console.class, Game.class, User.class}, version = 12, exportSchema = false)
+@Database(entities = {Console.class, Game.class, User.class}, version = 13, exportSchema = false)
 public abstract class ConsoleDatabaseBuilder extends RoomDatabase {
     public abstract ConsoleDAO consoleDAO();
     public abstract GameDAO gameDAO();

@@ -11,13 +11,15 @@ public class Console {
     private String consoleBrand;
     private String consoleReleaseDate;
     private String acquisitionDate;
+    private int userID;
 
-    public Console(int consoleID, String consoleName, String consoleBrand, String consoleReleaseDate, String acquisitionDate) {
+    public Console(int consoleID, String consoleName, String consoleBrand, String consoleReleaseDate, String acquisitionDate, int userID) {
         this.consoleID = consoleID;
         this.consoleName = consoleName;
         this.consoleBrand = consoleBrand;
         this.consoleReleaseDate = consoleReleaseDate;
         this.acquisitionDate = acquisitionDate;
+        this.userID = userID;
     }
 
     public int getConsoleID() {
@@ -57,5 +59,13 @@ public class Console {
 
     public void setAcquisitionDate(String acquisitionDate) {
         this.acquisitionDate = acquisitionDate;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 }

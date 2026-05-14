@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 User user = repository.login(username, password);
                 if (user != null) {
                     Intent intent = new Intent(MainActivity.this, ConsoleList.class);
+                    intent.putExtra("userID", user.getUserID());
                     startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();

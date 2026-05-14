@@ -34,12 +34,15 @@ public class ConsoleList extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView emptyStateText;
     private TextView statsContent;
+    private int userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_console_list);
+
+        userID = getIntent().getIntExtra("userID", -1);
 
         emptyStateText = findViewById(R.id.empty_state_text);
         statsContent = findViewById(R.id.stats_content);
@@ -49,6 +52,7 @@ public class ConsoleList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ConsoleList.this, ConsoleDetails.class);
+                intent.putExtra("userID", userID);
                 startActivity(intent);
             }
         });
@@ -56,6 +60,7 @@ public class ConsoleList extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerview);
         repository = new Repository(getApplication());
         consoleAdapter = new ConsoleAdapter(this);
+        consoleAdapter.setUserID(userID);
         recyclerView.setAdapter(consoleAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -78,8 +83,8 @@ public class ConsoleList extends AppCompatActivity {
     }
 
     private void updateList() {
-        List<Console> allConsoles = repository.getmAllConsoles();
-        List<Game> allGames = repository.getAllGames();
+        List<Console> allConsoles = repository.getConsolesByUserID(userID);
+        List<Game> allGames = repository.getGamesByUserID(userID);
         
         consoleAdapter.setData(allConsoles, allGames);
 
@@ -150,8 +155,8 @@ public class ConsoleList extends AppCompatActivity {
     }
 
     private void generateCollectionReport() {
-        List<Console> allConsoles = repository.getmAllConsoles();
-        List<Game> allGames = repository.getAllGames();
+        List<Console> allConsoles = repository.getConsolesByUserID(userID);
+        List<Game> allGames = repository.getGamesByUserID(userID);
 
         if (allConsoles == null || allConsoles.isEmpty()) {
             return;
