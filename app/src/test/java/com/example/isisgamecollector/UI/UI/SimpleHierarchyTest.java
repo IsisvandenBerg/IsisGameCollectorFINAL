@@ -23,4 +23,20 @@ public class SimpleHierarchyTest {
         
         System.out.println("testGameToConsoleAssignment: PASSED");
     }
+    /**
+     * Unit test to ensure game correctly stores and retrieves its own ID
+     */
+    @Test
+    public void testGameIdentity() {
+        // Arrange: Define a unique ID for a game
+        int expectedGameID = 777;
+
+        // Act: Create a game object with that ID
+        Game game = new Game(expectedGameID, "Super Mario World", "08/13/91", "12/25/91", 20, 1);
+
+        // Assert: Verify the game correctly returns its own ID
+        assertEquals("The game should correctly store its unique ID", expectedGameID, game.getGameID());
+
+        System.out.println("testGameIdentity: PASSED");
+    }
 }
