@@ -104,7 +104,7 @@ public class AccountCreationActivity extends AppCompatActivity {
         return email != null && Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-    private boolean validatePassword(String password) {
+    private boolean validatePassword(String password) {//requirements
         if (password == null || password.length() < 8) return false;
 
         boolean hasUppercase = !password.equals(password.toLowerCase());
