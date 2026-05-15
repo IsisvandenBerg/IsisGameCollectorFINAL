@@ -57,7 +57,7 @@ public class AccountCreationActivity extends AppCompatActivity {
                 String email = editEmail.getText().toString().trim();
                 String password = editPassword.getText().toString();
                 String confirmPassword = editConfirmPassword.getText().toString();
-
+                //requirements for account creation
                 if (!validateUsername(username)) {
                     editUsername.setError("Username must be at least 5 characters");
                     return;
